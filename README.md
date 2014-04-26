@@ -1,4 +1,4 @@
-# passive voice
+# passive voice [![Build Status](https://travis-ci.org/btford/passive-voice.svg?branch=master)](https://travis-ci.org/btford/passive-voice)
 
 npm module for detecting passive voice.
 
