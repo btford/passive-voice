@@ -176,7 +176,7 @@ var irregulars = [
   'written'
 ];
 
-var re = new RegExp('\\b(am|are|were|being|is|been|was|be)\\b[ ]*([\\w]+ed|' + irregulars.join('|') + ')\\b', 'gi');
+var re = new RegExp('\\b(am|are|were|being|is|been|was|be)\\b\\s*([\\w]+ed|' + irregulars.join('|') + ')\\b', 'gi');
 
 module.exports = function (text) {
   var suggestions = [];
