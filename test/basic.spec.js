@@ -14,4 +14,8 @@ describe('passive', function () {
     expect(passive('She was given an apple.')).toEqual([{ index: 4, offset: 9 }]);
   });
 
+  it('should not mark "is indeed" as passive', function () {
+    expect(passive('This sentence is indeed active.')).toEqual([]);
+  });
+
 });

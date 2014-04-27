@@ -176,15 +176,21 @@ var irregulars = [
   'written'
 ];
 
+var exceptions = [
+  'indeed',
+];
+
 var re = new RegExp('\\b(am|are|were|being|is|been|was|be)\\b\\s*([\\w]+ed|' + irregulars.join('|') + ')\\b', 'gi');
 
 module.exports = function (text) {
   var suggestions = [];
   while (match = re.exec(text)) {
-    suggestions.push({
-      index: match.index,
-      offset: match[0].length
-    });
+    if (exceptions.indexOf(match[2].toLowerCase()) === -1) {
+      suggestions.push({
+        index: match.index,
+        offset: match[0].length
+      });
+    }
   }
   return suggestions;
 }
