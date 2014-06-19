@@ -38,7 +38,7 @@ For example:
 
 Versus:
 
-> The apparatus headed the mixture to 300°C.
+> The apparatus heated the mixture to 300°C.
 
 For this case, you can pass `{ by: true }` as a second argument to `passive` to only flag
 such constructions as problematic:
