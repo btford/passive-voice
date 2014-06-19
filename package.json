@@ -1,6 +1,6 @@
 {
   "name": "passive-voice",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "detect passive voice",
   "main": "passive.js",
   "directories": {
