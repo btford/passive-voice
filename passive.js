@@ -181,10 +181,14 @@ var exceptions = [
 ];
 
 var re = new RegExp('\\b(am|are|were|being|is|been|was|be)\\b\\s*([\\w]+ed|' + irregulars.join('|') + ')\\b', 'gi');
+var byRe; // lazly construct
 
-module.exports = function (text) {
+module.exports = function (text, options) {
+  var r = (options && options.by) ?
+          (byRe || constructByRe()) : re; // not sorry
+
   var suggestions = [];
-  while (match = re.exec(text)) {
+  while (match = r.exec(text)) {
     if (exceptions.indexOf(match[2].toLowerCase()) === -1) {
       suggestions.push({
         index: match.index,
@@ -193,4 +197,9 @@ module.exports = function (text) {
     }
   }
   return suggestions;
+}
+
+// lol
+function constructByRe () {
+  return byRe = new RegExp(re.toString().slice(1, -3) + '\\s*by\\b', 'gi');
 }

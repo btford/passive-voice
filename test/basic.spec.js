@@ -18,4 +18,13 @@ describe('passive', function () {
     expect(passive('This sentence is indeed active.')).toEqual([]);
   });
 
+  it('should not mark passive voice in "by" mode', function () {
+    expect(passive('The mixture was heated to 300°C.', { by: true })).toEqual([]);
+  });
+
+  it('should mark passive voice followed by "by" in "by" mode', function () {
+    expect(passive('The mixture was heated by the apparatus to 300°C.', { by: true })).
+        toEqual([{ index : 12, offset : 13 }]);
+  });
+
 });
