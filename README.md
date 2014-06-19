@@ -46,10 +46,10 @@ such constructions as problematic:
 ```javascript
 var passive = require('passive-voice');
 
-var problems = passive('The mixture was heated to 300°C.');
+var problems = passive('The mixture was heated to 300°C.', { by: true });
 // problems -> []
 
-var problems = passive('The mixture was heated by the apparatus to 300°C.');
+var problems = passive('The mixture was heated by the apparatus to 300°C.', { by: true });
 // problems -> [{ index: 12, offset: 13 }]
 ```
 
