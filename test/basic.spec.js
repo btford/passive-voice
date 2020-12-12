@@ -27,4 +27,14 @@ describe('passive', function () {
         toEqual([{ index : 12, offset : 13 }]);
   });
 
+  it('should work with half-space', function () {
+    expect(passive("The mixture was " + String.fromCharCode(8204)+  "heated to 300°C.")).
+        toEqual([{ index : 12, offset : 11 }]);
+  });
+
+  it('should work with half-space in "by" mode', function () {
+    expect(passive("The mixture was heated " + String.fromCharCode(8204)+  "by the apparatus to 300°C.", { by: true })).
+        toEqual([{ index : 12, offset : 14 }]);
+  });
+
 });
