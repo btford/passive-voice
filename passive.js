@@ -180,7 +180,7 @@ var exceptions = [
   'indeed',
 ];
 
-var re = new RegExp('\\b(am|are|were|being|is|been|was|be)\\b\\s*([\\w]+ed|' + irregulars.join('|') + ')\\b', 'gi');
+var re = new RegExp('\\b(am|are|were|being|is|been|was|be)\\b[\\s|\\u200C]*([\\w]+ed|' + irregulars.join('|') + ')\\b', 'gi');
 var byRe; // lazly construct
 
 module.exports = function (text, options) {
@@ -201,5 +201,5 @@ module.exports = function (text, options) {
 
 // lol
 function constructByRe () {
-  return byRe = new RegExp(re.toString().slice(1, -3) + '\\s*by\\b', 'gi');
+  return byRe = new RegExp(re.toString().slice(1, -3) + '[\\s|\\u200C]*by\\b', 'gi');
 }
