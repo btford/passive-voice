@@ -1,6 +1,6 @@
 {
   "name": "passive-voice",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "detect passive voice",
   "main": "passive.js",
   "directories": {
@@ -18,6 +18,6 @@
   "author": "Brian Ford",
   "license": "MIT",
   "devDependencies": {
-    "jasmine-node": "^1.14.3"
+    "jasmine-node": "^3.0.0"
   }
 }
